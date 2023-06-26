@@ -1,7 +1,7 @@
 package com.example.newsapi.data.model
 
-data class New(
-	val articles: List<ArticlesItem?>? = null
+data class NewResponse(
+	val articles: List<New?>? = null
 )
 
 data class Source(
@@ -9,7 +9,7 @@ data class Source(
 	val id: String? = null
 )
 
-data class ArticlesItem(
+data class New(
 	val publishedAt: String? = null,
 	val author: String? = null,
 	val urlToImage: String? = null,
