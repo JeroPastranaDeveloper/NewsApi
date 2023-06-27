@@ -7,5 +7,7 @@ class Constants {
         const val COUNTRY = "country"
         const val API_KEY_RAW = "apiKey"
         const val NO_CONNECTION = 1
+        const val LAST_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        const val DATE_FORMAT = "dd/MM/yyyy"
     }
 }
