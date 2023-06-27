@@ -6,5 +6,6 @@ class Constants {
         const val LOCATION = "us"
         const val COUNTRY = "country"
         const val API_KEY_RAW = "apiKey"
+        const val NO_CONNECTION = 1
     }
 }
