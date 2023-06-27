@@ -27,6 +27,18 @@ class MainActivity : AppCompatActivity() {
         initViewModel()
         initAdapter()
         initObservers()
+        initListeners()
+    }
+
+    private fun initListeners() {
+        binding.buttonSearch.setOnClickListener {
+            filterNewsByName()
+        }
+
+        binding.buttonClear.setOnClickListener {
+            binding.searchBar.text.clear()
+            filterNewsByName()
+        }
     }
 
     private fun initViews() {
@@ -59,6 +71,10 @@ class MainActivity : AppCompatActivity() {
         )
         binding.container.layoutManager = LinearLayoutManager(this)
         binding.container.adapter = newAdapter
+    }
+
+    private fun filterNewsByName() {
+        mainViewModel.getNewsByName(binding.searchBar.text.toString())
     }
 
     private fun initViewModel() {

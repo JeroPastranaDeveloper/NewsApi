@@ -34,4 +34,13 @@ class MainViewModel @Inject constructor(
             _error.postValue(NO_CONNECTION)
         }
     }
+
+    fun getNewsByName(query: String) = viewModelScope.launch {
+        if (networkUtils.isNetworkAvailable()) {
+            val filteredNews = _allNews.value?.filter { new ->
+                new.title?.contains(query, ignoreCase = true) ?: false
+            } ?: emptyList()
+            _news.postValue(filteredNews)
+        }
+    }
 }
