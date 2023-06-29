@@ -41,6 +41,11 @@ class MainActivity : AppCompatActivity() {
             binding.searchBar.text.clear()
             filterNewsByName()
         }
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            mainViewModel.getNews()
+            binding.swipeRefreshLayout.isRefreshing = false
+        }
     }
 
     private fun initViews() {
@@ -67,8 +72,7 @@ class MainActivity : AppCompatActivity() {
             emptyList(),
             object : NewAdapter.OnNewClick {
                 override fun onClick(new: New) {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(new.url))
-                    startActivity(intent)
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(new.url)))
                 }
             }
         )
