@@ -1,5 +1,7 @@
 package com.example.newsapi.presentation.main
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -65,7 +67,8 @@ class MainActivity : AppCompatActivity() {
             emptyList(),
             object : NewAdapter.OnNewClick {
                 override fun onClick(new: New) {
-                    Toast.makeText(this@MainActivity, "holi", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(new.url))
+                    startActivity(intent)
                 }
             }
         )
