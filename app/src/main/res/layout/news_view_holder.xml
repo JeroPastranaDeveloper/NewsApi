@@ -50,6 +50,14 @@
                 android:layout_weight="1"
                 android:padding="@dimen/default_padding"
                 android:textAlignment="textEnd" />
+
+            <ImageButton
+                android:id="@+id/button_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:backgroundTint="@color/white"
+                app:srcCompat="@drawable/nofav" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
